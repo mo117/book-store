@@ -1,0 +1,120 @@
+<!-- start navbar -->
+<!-- <nav class="nav ">
+
+
+
+    <div class="logo">
+        <img src="assets/Images/logo.png" alt="" srcset="">
+    </div>
+    <ul class="nav-links">
+
+
+
+        <li class="close" (click)="colseNav()">
+            <i class="fas fa-times"></i>
+        </li>
+        <li>
+            <a routerLink="/" routerLinkActive="navactive">home</a>
+        </li>
+        </li>
+
+    </ul>
+    <div class="burger" (click)="OpenNav()">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+    </div>
+
+</nav> -->
+
+<header class="header header--intro">
+    <div class="container">
+        <div class="header__content">
+            <div class="header__burger" (click)="OpenMenu()"><span></span><span></span><span></span></div>
+            <div class="header__logo">
+                <a routerLink="/Home"><img src="assets/Images/logo.png"></a>
+            </div>
+            <nav class="header__nav">
+                <ul>
+                    <li><a routerLinkActive="active" routerLink="/Home" (click)="closeNav()">home</a></li>
+                    <li>
+                        <a
+                     
+                          routerLinkActive="active"
+                          
+                          >Category<span class="icon arrow">
+                            <svg
+                              id="Capa_1"
+                              version="1.1"
+                              xmlns="http://www.w3.org/2000/svg"
+                              xmlns:xlink="http://www.w3.org/1999/xlink"
+                              x="0px"
+                              y="0px"
+                              width="30.727px"
+                              height="30.727px"
+                              viewBox="0 0 30.727 30.727"
+                              style="enable-background: new 0 0 30.727 30.727"
+                              xml:space="preserve"
+                            >
+                              <g>
+                                <path
+                                  d="M29.994,10.183L15.363,24.812L0.733,10.184c-0.977-0.978-0.977-2.561,0-3.536c0.977-0.977,2.559-0.976,3.536,0                                            l11.095,11.093L26.461,6.647c0.977-0.976,2.559-0.976,3.535,0C30.971,7.624,30.971,9.206,29.994,10.183z"
+                                ></path>
+                              </g></svg></span
+                        ></a>
+                        <ul class="dropdown">
+                          <li
+                            *ngFor="let Categoty of sessionData.all_category"
+                            (click)="closeNav(); getAllBook(Categoty.id)"
+                          >
+                            <a routerLinkActive="active" [routerLink]="['/books', Categoty.id]">{{
+                              Categoty.name
+                            }}</a>
+                       
+                          </li>
+                        </ul>
+                      </li>
+                    <li><a routerLink="/About" routerLinkActive="active" (click)="closeNav()">about us</a></li>
+
+                    <li *ngIf="sessionData.IsLogin == false">
+                        <a routerLink="/login" routerLinkActive="active" (click)="closeNav()">log in </a>
+                    </li>
+                    <li *ngIf="sessionData.IsLogin == false">
+                        <a routerLink="/signup" routerLinkActive="active" *ngIf="sessionData.IsLogin == false" (click)="closeNav()">
+              sign up</a>
+                    </li>
+                    <li *ngIf="sessionData.IsLogin == true">
+                        <a>Account<span class="icon arrow">
+                <svg id="Capa_1" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30.727px" height="30.727px"
+                  viewBox="0 0 30.727 30.727" style="enable-background: new 0 0 30.727 30.727" xml:space="preserve">
+                  <g>
+                    <path
+                      d="M29.994,10.183L15.363,24.812L0.733,10.184c-0.977-0.978-0.977-2.561,0-3.536c0.977-0.977,2.559-0.976,3.536,0                                            l11.095,11.093L26.461,6.647c0.977-0.976,2.559-0.976,3.535,0C30.971,7.624,30.971,9.206,29.994,10.183z">
+                    </path>
+                  </g>
+                </svg></span></a>
+                        <ul class="dropdown">
+                            <li>
+                                <a (click)="closeNav()" routerLink="/ProfilePlisher">Profile</a>
+
+                            </li>
+                            <li>
+                              <a (click)="closeNav()" routerLink="/cart">My Cart</a>
+
+                          </li>
+                          <li>
+                            <a (click)="closeNav()" routerLink="/Favrotie">My Favrotie</a>
+
+                        </li>
+                            <li>
+                                <a class="logout" (click)="logout(); closeNav()" routerLinkActive="active"> log out</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</header>

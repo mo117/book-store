@@ -1,0 +1,144 @@
+// start box
+$maincolor: #1eb2a6;
+$secondcolor: #fff;
+$thirdcolor: #9b9b9b;
+$anothercolor: #212529;
+$font-size: 16px;
+$font-family: "Tajawal",
+sans-serif;
+$break-small: 500px;
+$break-large: 1024px;
+.box {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    h2 {
+        font-family: tahoma;
+        font-size: $font-size + 2;
+        text-transform: capitalize;
+        line-height: 1.5;
+    }
+    .blog1 span {
+        color: $thirdcolor;
+        line-height: 1.5;
+    }
+    .blog1 button {
+        height: 45px;
+        width: 150px;
+        margin-bottom: 5%;
+        cursor: pointer;
+        background-color: $maincolor;
+        border: none;
+        outline: none;
+        margin-top: 20px;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: capitalize;
+        font-family: sans-serif;
+        color: $secondcolor;
+        text-decoration-line: none;
+    }
+    .blog1 button:hover {
+        background: $anothercolor;
+        transition: 0.5s;
+    }
+    .blog2 img {
+        height: 300px;
+        width: 100%;
+        margin-bottom: 5%;
+    }
+    .blog3 {
+        margin: 0 auto;
+        .father {
+            display: grid;
+            .social-icons {
+                list-style: none;
+                display: flex;
+                // position: absolute;
+                // top: 50%;
+                // left: 50%; // margin-left: 60%;
+            }
+        }
+        .social-icons a {
+            background-color: $maincolor;
+            color: $secondcolor;
+            font-size: $font-size;
+            display: inline-block;
+            line-height: 44px;
+            width: 44px;
+            height: 44px;
+            text-align: center;
+            margin-right: 8px;
+            border-radius: 100%;
+            -webkit-transition: all 0.2s linear;
+            -o-transition: all 0.2s linear;
+            transition: all 0.2s linear;
+        }
+        .social-icons a.facebook:hover {
+            background-color: $anothercolor;
+        }
+        .social-icons a.twitter:hover {
+            background-color: $anothercolor;
+        }
+        .social-icons a.linkedin:hover {
+            background-color: $anothercolor;
+        }
+        .social-icons a.dribbble:hover {
+            background-color: $anothercolor;
+        }
+    }
+}
+
+@media screen and (max-width: $break-small) {
+    .box {
+        // margin-bottom: 15% !important;
+        .social-icons {
+            top: 0% !important;
+            left: 20% !important;
+        }
+    }
+}
+
+@media screen and (max-width: $break-large) {
+    .box {
+        // margin-bottom: 15% !important;
+        .social-icons {
+            top: 0% !important;
+            left: 20% !important;
+        }
+        
+    }
+}
+
+.title {
+    position: relative;
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.title:before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 1px;
+    background-color: #1eb2a6;
+}
+
+.title:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 3px;
+    background-color: #1eb2a6;
+}
+
+.title span {
+    color: #1eb2a6;
+}

@@ -1,0 +1,220 @@
+<!-- carousel  -->
+<app-pagebackground [pageName]="'profile'" [MainpageName]="'Account'"></app-pagebackground>
+
+<!-- end carousel -->
+
+<!-- start profile -->
+<div class="container profile">
+  <div class="row">
+    <!-- start iformation about user -->
+    <div class="col-xl-12 col-lg-12 col-md-6 col-12">
+      <div class="row">
+
+        <div class="col-xl-3 col-lg-3 col-md-6 col-12">
+          <div class="img">
+            <img src="../../../assets/Images/pexels-pixabay-220453.jpg">
+          </div>
+        </div>
+
+        <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+          <div class="info ">
+            <h6>user name</h6>
+            <span>maichael</span><br> <br>
+            <h6>Email</h6>
+            <span>mohamedhamed74@gmail.com</span> <br> <br>
+            <h6>Department</h6>
+            <span>puplisher</span>
+          </div>
+        </div>
+
+        <div class="col-xl-3 col-lg-3 col-md-12 col-12">
+          <div class="button">
+            <button>Edit user</button>
+          </div>
+        </div>
+        <!-- line -->
+        <hr class="line">
+        <!-- line -->
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end iformation about user -->
+
+
+<!-- start puplish  -->
+<div class="container" *ngIf="publiser == 'true'">
+  <div class="puplish">
+    <div class="row">
+      <div class="col-lg-9 ">
+        <h2>my items</h2>
+      </div>
+
+      <!-- start popup -->
+      <div class="col-lg-3">
+        <div class="add-book">
+
+          <button type="submit" class="btn btn-lg btn-outline-primary add" (click)="open(content)">add
+            book</button>
+        </div>
+      </div>
+    </div>
+    <!-- end popup  -->
+
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12 col-12" *ngFor="let i of Books">
+        <div class="contain">
+          <img src="{{i.bookcover}}" alt="Avatar" class="image" style="width:100%">
+          <div class="middle">
+
+            <!-- book delete  -->
+            <button class="icon" (click)="opensweetalert(i.id)"><i class="fas fa-trash-alt" title="delete"></i></button>
+            <!-- book delete -->
+
+            <!-- book edit  -->
+
+            <button class="btn btn-lg btn-outline-primary icon" (click)="openEdite(EditeBook, i.id)"><i
+                class="fas fa-edit"></i></button>
+            <!-- book edit -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- end puplish  -->
+
+<!-- end profile -->
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Book</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="addbooksform" (submit)="onSubmit(addbooksform.value)">
+      <div class="form-group">
+        <label for="dateOfBirth">Book cover</label>
+        <div class="input-group">
+          <div class="text-center" style="text-align: center; width: 100%">
+            <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()" style="
+              height: 200px;
+              width: 200px;
+              border-radius: 50%;" />
+          </div>
+          <br />
+
+          <fieldset class="form-group" style="    width: 77px;
+          margin-left: 50%;
+          margin-top: -37px;">
+            <div class="custom-file mx-auto d-block">
+              <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                id="inputGroupFile01" />
+              <label class="custom-file-label" for="inputGroupFile01"> </label>
+            </div>
+          </fieldset>
+        </div>
+        <label for="dateOfBirth">Book name</label>
+        <div class="input-group">
+          <input formControlName="name" id="name" class="form-control">
+        </div>
+        <label for="dateOfBirth">Book author</label>
+        <div class="input-group">
+          <input formControlName="author" id="author" class="form-control">
+        </div>
+
+        <label for="dateOfBirth">Book categorie</label>
+        <div class="input-group">
+          <!-- <ng-multiselect-dropdown name="categorie" formGroupName="categorie" placeholder="Book Category" [placeholder]="'custom placeholder'"
+          [data]="dropdownList"
+          [settings]="dropdownSettings"
+          (onSelect)="onItemSelect($event)"
+          (onSelectAll)="onSelectAll($event)" style="    width: 100%;">
+          </ng-multiselect-dropdown> -->
+          <select name="categorie" formControlName="categorie" style="    width: 100%;" class="custom-select">
+            <option *ngFor="let cat of sessionData.all_category" value="{{cat.id}}">{{cat.name}}</option>
+          </select>
+        </div>
+
+        <label for="dateOfBirth">price</label>
+        <div class="input-group">
+          <input formControlName="price" id="price" class="form-control">
+        </div>
+      </div>
+      <button type="button" class="btn btn-outline-dark" type="submit">Add</button>
+    </form>
+  </div>
+  <div class="modal-footer">
+
+  </div>
+</ng-template>
+
+
+<ng-template #EditeBook let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Book</h4>
+      <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="addbooksform" (submit)="OnUpdate(addbooksform.value)">
+        <div class="form-group">
+          <label for="dateOfBirth">Book cover</label>
+          <div class="input-group">
+            <div class="text-center" style="text-align: center; width: 100%">
+              <img [src]="imgSrc" class="inimage" (click)="fileUploader.click()" style="
+                height: 200px;
+                width: 200px;
+                border-radius: 50%;" />
+            </div>
+            <br />
+  
+            <fieldset class="form-group" style="    width: 77px;
+            margin-left: 50%;
+            margin-top: -37px;">
+              <div class="custom-file mx-auto d-block">
+                <input type="file" accept="image/*" #fileUploader (change)="showPreview($event)" class="custom-file-input"
+                  id="inputGroupFile01" />
+                <label class="custom-file-label" for="inputGroupFile01"> </label>
+              </div>
+            </fieldset>
+          </div>
+          <label for="dateOfBirth">Book name</label>
+          <div class="input-group">
+            <input formControlName="name" id="name" class="form-control">
+          </div>
+          <label for="dateOfBirth">Book author</label>
+          <div class="input-group">
+            <input formControlName="author" id="author" class="form-control">
+          </div>
+  
+          <label for="dateOfBirth">Book categorie</label>
+          <div class="input-group">
+            <!-- <ng-multiselect-dropdown name="categorie" formGroupName="categorie" placeholder="Book Category" [placeholder]="'custom placeholder'"
+            [data]="dropdownList"
+            [settings]="dropdownSettings"
+            (onSelect)="onItemSelect($event)"
+            (onSelectAll)="onSelectAll($event)" style="    width: 100%;">
+            </ng-multiselect-dropdown> -->
+            <select name="categorie" formControlName="categorie" style="    width: 100%;" class="custom-select">
+              <option *ngFor="let cat of sessionData.all_category" value="{{cat.id}}">{{cat.name}}</option>
+            </select>
+          </div>
+  
+          <label for="dateOfBirth">price</label>
+          <div class="input-group">
+            <input formControlName="price" id="price" class="form-control">
+          </div>
+        </div>
+        <button type="button" class="btn btn-outline-dark" type="submit">Edite</button>
+      </form>
+    </div>
+    <div class="modal-footer">
+  
+    </div>
+  </ng-template>

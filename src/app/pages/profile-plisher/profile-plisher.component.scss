@@ -1,0 +1,206 @@
+// start profile
+$maincolor: #24a19c;
+$secondcolor: #fff;
+$thirdcolor: gray;
+$anothercolor:#e6e6e6;
+$font-size: 16px;
+$font-family: "Tajawal",
+sans-serif;
+$break-small: 500px;
+$break-large: 1024px;
+
+.profile{
+    margin-top:5% ;
+    margin-bottom: 5%;
+    .img{
+        img{
+            height:250px;
+            width: 100%;
+            border-radius: 50%;
+          
+        }
+    }
+    .info{
+        margin-left: 10%;
+        margin-top: 5%;
+        h6{
+            font-size: $font-size;
+            text-transform: capitalize;
+            font-family: $font-family;
+        }
+        span{
+ 
+            color: $thirdcolor
+        } 
+    }
+    .button{
+        button{
+  
+            background-color:$maincolor;
+            border: none;
+            outline: none;
+            color: $secondcolor;
+            font-size: $font-size - 3 ;
+            text-transform: capitalize;
+            font-family: $font-family;
+            height: 35px;
+            width:80px;
+            border-radius: 7%;
+            margin-top: 5%;
+        }
+    }
+    .line{
+            height: 1px;
+            width: 100%;
+            background-color: $anothercolor;
+        }
+
+    @media screen and (max-width: $break-large) {
+
+            .info {
+                margin-left: 0;
+                text-align: center;
+
+             }
+             .button{
+                 text-align: center
+             }
+    }
+    @media screen and (min-width: 768px ) and ( max-width:991px) {
+
+         .button{
+             margin-left: 600px
+       }
+}
+}
+
+// start puplishs
+
+.puplish{
+         
+    margin-top: 5%;
+    margin-bottom: 5%;
+    h2{
+        font-size: $font-size + 8;
+        font-family: $font-family;
+        text-transform: capitalize;
+        border-bottom: 2px solid $maincolor;
+        line-height: 35px;
+        width:12%;
+        margin-bottom: 5%;
+    }
+    .add{
+        background-color:$maincolor;
+        border: none;
+        outline: none;
+        color: $secondcolor;
+        font-size: $font-size - 3 ;
+        text-transform: capitalize;
+        font-family: $font-family;
+        height: 35px;
+        width:90px;
+        border-radius: 7%;
+
+    }
+    .contain {
+        position: relative;
+        width: 70%;
+      }
+      
+      .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+        margin: 5%;
+      }
+      
+      .middle {
+        transition: .5s ease;
+        opacity: 0;
+        position: absolute;
+        top: 80%;
+        left: 55%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        text-align: center;
+        display: flex;
+      }
+      
+      
+      .contain:hover .middle {
+        opacity: 1;
+      }
+      
+      .icon {
+        color: white;
+        font-size: 16px;
+        display: flex;
+        margin:5px ;
+        background-color: $maincolor;
+        border-radius: 50%;
+        padding: 10px 10px;
+        cursor: pointer;
+      }
+    @media screen and (max-width: $break-small) {
+
+       h2 {
+
+        width: 26%;
+         }
+}
+
+ }  
+  
+//  end puplish 
+
+
+// end profile
+ 
+
+.contain {
+    position: relative;
+    width: 70%;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    margin: 5%;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+  }
+  
+  .icon{
+
+   background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  
+  i {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    margin:5px ;
+    background-color: $maincolor;
+    border-radius: 50%;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+

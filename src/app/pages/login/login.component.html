@@ -1,0 +1,30 @@
+<!-- start log in  -->
+<app-pagebackground [pageName]="'log in'" [MainpageName]="'home'"></app-pagebackground>
+<div class="container">
+    <div class="box">
+        <input type="checkbox" id="toggle" class="box__toggle" hidden>
+        <img src="assets/Images/bacj.jpg" alt="Picture by Autumn Studio" class="box__image">
+
+        <form class="form form--login"  [formGroup]="LogInForm" (submit)="onSubmit(LogInForm)">
+
+            <h2 class="form__title">Sign in</h2>
+
+            <div class="form__helper">
+                <input type="text" name="user" id="user" placeholder="User" formControlName="user" class="form__input" />
+                <label class="form__label" for="user">User</label>
+            </div>
+
+            <div class="form__helper">
+                <input type="Password" name="Password" id="Password" placeholder="Password" formControlName="Password" class="form__input" />
+                <label class="form__label" for="password">Password</label>
+            </div>
+
+            <button type="submit" class="form_button">
+                <span>Login</span>
+            </button>
+            <p class="form__text">forget your password? <label for="toggle" class="form__link" routerLink="/forgetpassword">reset now!</label>
+
+            <p class="form__text">Don't have an account? <label for="toggle" class="form__link" routerLink="/signup">Sign up!</label>
+        </form>
+    </div>
+</div>

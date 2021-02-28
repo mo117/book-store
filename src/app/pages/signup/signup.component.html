@@ -1,0 +1,52 @@
+<!-- start sign up -->
+<app-pagebackground [pageName]="'sign up'" [MainpageName]="'home'"></app-pagebackground>
+<div class="container">
+    <div class="box">
+        <input type="checkbox" id="toggle" class="box__toggle" hidden>
+        <img src="assets/Images/bacj.jpg" alt="Picture by Autumn Studio" class="box__image">
+
+        <form class="form form--login" [formGroup]="LogInForm" (submit)="onSubmit(LogInForm)">
+
+            <h1 class="form__title">Sign up</h1>
+
+            <div class="form__helper">
+                <input formControlName="user" type="text" name="user" id="new-user" placeholder="User" class="form__input" />
+                <label class="form__label" for="new-user">User Name</label>
+            </div>
+
+            <div class="form__helper">
+                <input formControlName="email" type="email" name="email" id="email" placeholder="Email" class="form__input" />
+                <label class="form__label" for="email">Email</label>
+            </div>
+
+            <div class="form__helper">
+                <input formControlName="password" type="password" name="password" id="new-user-password" placeholder="password" class="form__input" />
+                <label class="form__label" for="new-user-password">Password</label>
+            </div>
+
+            <div class="form__helper">
+                <input formControlName="confirmpassword" type="password" name="confirmpassword" id="confirmpassword" Placeholder="Confirm password" class="form__input" />
+                <label class="form__label" for="confirmpassword">Confirm password</label>
+            </div>
+
+            <div class="">
+
+                <select class="group-select" formControlName="publisher">
+          <option value="" disabled selected hidden>Select Type</option>
+
+          <option value="true">publisher</option>
+          <option value="false">not publisher</option>
+        </select>
+            </div>
+
+
+
+            <button type="submit" class="form_button">
+        <span>Register</span>
+      </button>
+
+            <p class="form__text">Already have an account? <label for="toggle" class="form__link" routerLink="/login">Log
+          in!</label>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- start item-book -->
+    <!-- Begin item -->
+    <div class="team-item item-style">
+        <div class="team-item-img">
+            <img class="lazy" *ngIf="BookProduct.bookcover == 'none'" src="../../../assets/Images/pexels-daria-shevtsova-1029807.jpg" alt="" >
+            <img class="lazy" *ngIf="BookProduct.bookcover != 'none'" src="{{BookProduct.bookcover}}" alt="" >
+            
+        </div>
+        <div class=" item-info">
+            <h4 class="team-item-title item-title">{{BookProduct.bookname}}</h4>
+            <div class="team-item-position">{{BookProduct.author}}</div>
+            <ul class="team-item-social-links">
+                <li>
+                    <a (click)="add_book_cart(BookProduct.id)" title="add-to-card">
+                        <i class="fas fa-cart-plus"></i>
+                    </a>
+                </li>
+                <li>
+                    <a (click)="add_book_fav(BookProduct.id)" title="add-to-fav">
+                        <i class="fas fa-heart"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>

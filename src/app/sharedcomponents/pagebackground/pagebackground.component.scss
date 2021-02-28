@@ -1,0 +1,25 @@
+$mainColor: #5cc2f2;
+.headerImage {
+    height: 400px;
+    // margin-top: 25px;
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.pageName {
+    padding: 30px;
+    padding-bottom: 9px;
+    background-color: #8d8c8caf;
+    div:first-child {
+        // padding: 0px 15%;
+        width: 100%;
+    }
+    p {
+        color: #414656;
+        span {
+            color: #fff;
+        }
+    }
+}

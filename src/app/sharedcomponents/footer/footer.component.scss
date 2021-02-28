@@ -1,0 +1,147 @@
+// start footer
+$maincolor:#26272b;
+$secondcolor:#fff;
+$thirdcolor: #bbb;
+$fottercolor:#737373;
+$anothercolor:#3366cc;
+$latestcolor:#33353d;
+$font-size:16px;
+$font-family:"Tajawal", sans-serif;
+$break-small: 768px;
+$break-large: 1024px;
+
+
+.site-footer
+{
+  background-color:$maincolor;
+  padding:45px 0 20px;
+  font-size:$font-size - 1 ;
+  line-height:24px;
+  color:$secondcolor;
+
+ hr
+{
+  border-top-color: $thirdcolor;
+  opacity:0.5
+}
+ hr.small
+{
+  margin:20px 0
+}
+ h6
+{
+  color:$secondcolor;
+  font-size:$font-size;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+ a
+{
+  color:$secondcolor
+}
+ a:hover
+{
+  color:$anothercolor;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:5%;
+  list-style:none;
+  text-transform: capitalize;
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:$break-large)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:$break-small)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:$fottercolor;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:$secondcolor;
+  color:$fottercolor;
+  font-size:$font-size;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:$secondcolor;
+  background-color:$anothercolor
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:$font-size - 2 
+}
+.social-icons a.facebook:hover
+{
+  background-color:$anothercolor
+}
+.social-icons a.twitter:hover
+{
+  background-color:$anothercolor
+}
+.social-icons a.linkedin:hover
+{
+  background-color:$anothercolor
+}
+.social-icons a.dribbble:hover
+{
+  background-color:$anothercolor
+}
+@media (max-width:$break-small)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+}

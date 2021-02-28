@@ -1,0 +1,55 @@
+// start profile
+$maincolor: #24a19c;
+$secondcolor: #fff;
+$thirdcolor: gray;
+$anothercolor:#e6e6e6;
+$font-size: 16px;
+$font-family: "Tajawal",
+sans-serif;
+$break-small: 500px;
+$break-large: 1024px;
+
+.contain {
+    position: relative;
+    width: 70%;
+  }
+  
+  .image {
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    margin: 5%;
+  }
+  
+  .middle {
+    transition: .5s ease;
+    position: absolute;
+    top: 80%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    display: flex;
+  }
+  
+  .icon{
+
+   background-color: transparent;
+    border: none;
+    outline: none;
+  }
+  
+  
+  i {
+    color: white;
+    font-size: 16px;
+    display: flex;
+    margin:5px ;
+    background-color: $maincolor;
+    border-radius: 50%;
+    padding: 10px 10px;
+    cursor: pointer;
+  }
+
